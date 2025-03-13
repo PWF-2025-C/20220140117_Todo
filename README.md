@@ -4,6 +4,26 @@
 
 
 
+###
+
+<p align="left"></p>
+
+###
+
+<h1 align="left">𝙸 𝚌0𝚍𝙴 𝚠𝙸𝚝𝙷</h1>
+
+###
+
+<div align="left">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg" height="40" alt="laravel logo"  />
+  <img width="12" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" height="40" alt="vscode logo"  />
+</div>
+
+###
+
+
+
 "𝚃𝚎𝚛𝚖𝚒𝚗𝚊𝚕 – 𝚌𝚘𝚖𝚖𝚊𝚗𝚍 𝚒𝚗𝚜𝚝𝚊𝚕𝚊𝚜𝚒 𝚋𝚛𝚎𝚎𝚣𝚎"
 
 
@@ -37,22 +57,5 @@
 
 
 
-<p align="left"></p>
 
-###
 
-<p align="left"></p>
-
-###
-
-<h1 align="left">𝙸 𝚌0𝚍𝙴 𝚠𝙸𝚝𝙷</h1>
-
-###
-
-<div align="left">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg" height="40" alt="laravel logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" height="40" alt="vscode logo"  />
-</div>
-
-###
