@@ -20,13 +20,13 @@
 ![Screenshot 2025-03-08 155023](https://github.com/user-attachments/assets/1de9b9d3-a270-4c39-b5bf-602df7af7d4c)
 
 
-"Browser – http://nim-todo.test/dashboard"
+"𝙱𝚛𝚘𝚠𝚜𝚎𝚛 – 𝚑𝚝𝚝𝚙://𝚗𝚒𝚖-𝚝𝚘𝚍𝚘.𝚝𝚎𝚜𝚝/𝚍𝚊𝚜𝚑𝚋𝚘𝚊𝚛𝚍"
 
 
-*user
+*𝚞𝚜𝚎𝚛
 ![image](https://github.com/user-attachments/assets/8933307a-de7a-4fcc-be75-abe69587f1e2)
 
-*admin
+*𝚊𝚍𝚖𝚒𝚗
 ![image](https://github.com/user-attachments/assets/185e9444-1100-47d3-a633-d25398ccf8fd)
 
 
