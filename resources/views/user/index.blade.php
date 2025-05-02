@@ -17,7 +17,7 @@
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
 
-                    <!-- Form pencarian -->
+                    {{-- Form Pencarian --}}
                     <div class="px-6 pt-6 mb-8 w-full sm:w-2/3 md:w-1/2 lg:w-1/3">
                         <form class="flex items-center gap-3" method="GET" action="{{ route('user.index') }}">
                             <x-text-input 
@@ -33,16 +33,16 @@
                         </form>
                     </div>
 
-                    <!-- Menampilkan hasil pencarian -->
+                    {{-- Hasil Pencarian --}}
                     @if (request('search'))
-                    <div class="px-6 mt-4 text-xl text-gray-900 dark:text-gray-100 mb-4">
-                        <h2 class="text-xl font-semibold leading-tight text-gray-800 dark:text-gray-200">
-                            Search results for: <strong>{{ request('search') }}</strong>
-                                </h2>
-                    </div>
+                        <div class="px-6 mt-4 text-xl text-gray-900 dark:text-gray-100 mb-4">
+                            <h2 class="text-xl font-semibold leading-tight text-gray-800 dark:text-gray-200">
+                                Search results for: <strong>{{ request('search') }}</strong>
+                            </h2>
+                        </div>
                     @endif
 
-                    <!-- Alert success & danger -->
+                    {{-- Alert --}}
                     <div class="px-6 text-xl text-gray-900 dark:text-gray-100">
                         @if (session('success'))
                             <p x-data="{ show: true }" x-show="show" x-transition
@@ -61,7 +61,7 @@
                         @endif
                     </div>
 
-                    <!-- Tabel hasil pencarian -->
+                    {{-- Tabel User --}}
                     <div class="relative overflow-x-auto mb-6">
                         @if (request('search') && $users->isEmpty())
                             <div class="px-6 py-4 text-center text-gray-500 dark:text-gray-400">
@@ -100,7 +100,36 @@
                                                 </p>
                                             </td>
                                             <td class="px-6 py-4">
-                                                <!-- Tempatkan tombol aksi jika ada, misalnya edit/delete -->
+                                                <div class="flex flex-wrap gap-2">
+                                                    @if ($data->is_admin)
+                                                        <form action="{{ route('user.removeadmin', $data) }}" method="POST">
+                                                            @csrf
+                                                            @method('PATCH')
+                                                            <button type="submit"
+                                                                class="inline-flex items-center px-3 py-1.5 bg-blue-100 text-blue-800 text-xs font-semibold rounded hover:bg-blue-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 dark:bg-blue-900 dark:text-blue-300 dark:hover:bg-blue-800">
+                                                                Remove Admin
+                                                            </button>
+                                                        </form>
+                                                    @else
+                                                        <form action="{{ route('user.makeadmin', $data) }}" method="POST">
+                                                            @csrf
+                                                            @method('PATCH')
+                                                            <button type="submit"
+                                                                class="inline-flex items-center px-3 py-1.5 bg-green-100 text-green-800 text-xs font-semibold rounded hover:bg-green-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 dark:bg-green-900 dark:text-green-300 dark:hover:bg-green-800">
+                                                                Make Admin
+                                                            </button>
+                                                        </form>
+                                                    @endif
+
+                                                    <form action="{{ route('user.destroy', $data) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this user?');">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <button type="submit"
+                                                            class="inline-flex items-center px-3 py-1.5 bg-red-100 text-red-800 text-xs font-semibold rounded hover:bg-red-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 dark:bg-red-900 dark:text-red-300 dark:hover:bg-red-800">
+                                                            Delete
+                                                        </button>
+                                                    </form>
+                                                </div>
                                             </td>
                                         </tr>
                                     @endforeach
@@ -109,7 +138,7 @@
                         @endif
                     </div>
 
-                    <!-- Pagination -->
+                    {{-- Pagination --}}
                     <div class="px-6 py-5">
                         {{ $users->links() }}
                     </div>

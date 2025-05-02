@@ -26,4 +26,39 @@ class UserController extends Controller
         }
         return view('user.index', compact('users'));
     }
+
+    public function makeadmin(User $user)
+    {
+        $user->timestamps = false;
+        $user->is_admin = true;
+        $user->save();
+        return back()->with('success', 'Make admin successfully!');
+    }
+
+    public function removeadmin(User $user)
+    {
+        if ($user->id != 1) {
+            $user->timestamps = false;
+            $user->is_admin = false;
+            $user->save();
+            return back()->with('success', 'Remove admin successfully!');
+        } else {
+            return redirect()->route('user.index');
+        }
+    }
+
+    public function destroy(User $user)
+    {
+        // Cek jika user yang akan dihapus bukan user dengan ID 1
+        if ($user->id != 1) {
+            // Hapus user
+            $user->delete();
+
+            // Redirect kembali dengan pesan sukses
+            return back()->with('success', 'User deleted successfully!');
+        }
+
+        // Jika user dengan ID 1, tidak bisa dihapus
+        return redirect()->route('user.index')->with('danger', 'Cannot delete this user!');
+    }
 }
