@@ -20,6 +20,18 @@
                                 :value="old('name', $todo->title)" required autofocus autocomplete="title" />
                             <x-input-error class="mt-2" :messages="$errors->get('title')" />
                         </div>
+                         <div class="mb-6">
+                            <x-input-label for="category_id" :value="__('Category')" />
+                            <x-select name="category_id" id="category_id" class="w-full">
+                                <option value="">Empty</option>
+                                @foreach ($categories as $category)
+                                    <option value="{{ $category->id }}" {{ old('category_id') == $category->id ? 'selected' : '' }}>
+                                        {{ $category->title }}
+                                    </option>
+                                @endforeach
+                            </x-select>
+                            <x-input-error class="mt-2" :messages="$errors->get('category_id')" />
+                        </div>
                         <div class="flex items-center gap-4">
                             <x-primary-button>{{ __('Save') }}</x-primary-button>
                             <x-cancel-button href="{{ route('todo.index') }}" />
