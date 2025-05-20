@@ -13,7 +13,7 @@ class Category extends Model
         'user_id',
     ];
 
-    public function todos()
+    public function todo()
     {
         return $this->hasMany(Todo::class);
     }
