@@ -34,6 +34,10 @@ Route::middleware(['auth', 'admin'])->group(function(){
 
 });
 
+Route::middleware(['auth', 'verified'])->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+});
+
 // Route::get('/todo', [TodoController::class, 'index'])->name('todo.index');
 // Route::get('/todo/create', [TodoController::class, 'create'])->name('todo.create');
 // Route::get('/todo/{todo}/edit', [TodoController::class, 'edit'])->name('todo.edit');
