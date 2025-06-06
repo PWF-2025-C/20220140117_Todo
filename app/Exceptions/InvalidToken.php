@@ -10,7 +10,7 @@ use Tymon\JWTAuth\Exceptions\TokenExpiredException;
 use Tymon\JWTAuth\Exceptions\TokenInvalidException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 
-class InvalidToken extends Exception
+class InvalidToken extends ExceptionHandler
 {
     public function render($request, Throwable $exception)
     {

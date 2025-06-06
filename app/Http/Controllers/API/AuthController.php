@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
-     /**
+    /**
      * Login user dengan email dan password.
      */
     public function login(Request $request)
@@ -48,7 +48,6 @@ class AuthController extends Controller
                     'token' => $token,
                 ],
             ], 200);
-
         } catch (Exception $e) {
             return response()->json([
                 'status_code' => 500,
